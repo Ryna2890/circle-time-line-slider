@@ -57,7 +57,6 @@ export const TimeLine = () => {
             {dataTimeLine.map((item, index) => {
               return (
                 <div
-                  key={item.type + 1}
                   id={index.toString()}
                   className={
                     swipe?.activeIndex === index ? "circleActive" : "circle"
@@ -112,15 +111,11 @@ export const TimeLine = () => {
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
             className="rangeSwiper"
           >
-            {dataTimeLine.map((item, index) => {
+            {dataTimeLine.map((item) => {
               const [first, second] = item.range.split(" ");
               return (
                 <>
-                  <SwiperSlide
-                    className="rangeSwiperSlide"
-                    key={item.range + index}
-                    id={item.range}
-                  >
+                  <SwiperSlide className="rangeSwiperSlide" id={item.range}>
                     <div className="range">
                       <span>{first}</span>
                       <span>{second}</span>
@@ -144,9 +139,9 @@ export const TimeLine = () => {
             navigation={isDesktop}
             modules={[Pagination, Navigation]}
           >
-            {dataCard?.facts.map((item, index) => {
+            {dataCard?.facts.map((item) => {
               return (
-                <SwiperSlide key={item.year + index}>
+                <SwiperSlide>
                   <div className="year">
                     {item.year}
                     <div className="text">{item.text}</div>
