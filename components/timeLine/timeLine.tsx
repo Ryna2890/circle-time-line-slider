@@ -14,7 +14,7 @@ import "@fontsource/bebas-neue";
 
 export const TimeLine = () => {
   const [dataCard, setDataCard] = useState<TimeLineItem>(dataTimeLine[0]);
-  const [isDesktop, setIsDesktop] = useState<boolean>(false);
+  const [isDesktop, setIsDesktop] = useState<boolean>(true);
   const [swipe, setSwipe] = useState<any>();
   const anim = useRef(null);
 
@@ -23,12 +23,16 @@ export const TimeLine = () => {
       const card = dataTimeLine[index];
       setDataCard(card);
     },
-    [setDataCard, setSwipe]
+    [setDataCard]
   );
 
-  function handleWindowSizeChange() {
-    setIsDesktop(window.innerWidth >= 1400);
-  }
+  const handleWindowSizeChange = useCallback(() => {
+    setIsDesktop(window.innerWidth >= 1390);
+  }, [setIsDesktop]);
+
+  // function handleWindowSizeChange() {
+  //   setIsDesktop(window.innerWidth >= 1390);
+  // }
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowSizeChange);
@@ -49,6 +53,7 @@ export const TimeLine = () => {
 
   return (
     <div className="wrapper">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div className="wrapperLineX"></div>
       <div className="wrapperLineY"></div>
       <div className="layout">
