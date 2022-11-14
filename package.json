@@ -9,12 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/bebas-neue": "^4.5.9",
+    "@fontsource/pt-sans": "^4.5.11",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
+    "gsap": "^3.11.3",
     "next": "13.0.2",
+    "prettier": "^2.7.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "swiper": "^8.4.4",
     "typescript": "4.8.4"
+  },
+  "devDependencies": {
+    "sass": "^1.56.1"
   }
 }
