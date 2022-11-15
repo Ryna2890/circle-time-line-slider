@@ -104,7 +104,8 @@ export const TimeLine = () => {
               handlerMainSlideChange(swiper.activeIndex)
             }
             slidesPerGroup={1}
-            followFinger={false}
+            longSwipesMs={300}
+            longSwipes={false}
             speed={300}
             loop={false}
             loopFillGroupWithBlank={false}
