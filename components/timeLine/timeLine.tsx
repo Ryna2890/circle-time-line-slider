@@ -103,6 +103,7 @@ export const TimeLine = () => {
             onSlideChange={(swiper) =>
               handlerMainSlideChange(swiper.activeIndex)
             }
+            slidesPerGroup={1}
             loop={false}
             loopFillGroupWithBlank={false}
             cssMode={true}
