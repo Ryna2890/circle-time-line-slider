@@ -43,9 +43,11 @@ export const TimeLine = () => {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.to(".circleWrapper", {
-        rotation: `${330 - 60 * swipe?.activeIndex}`,
-      });
+      if (isDesktop) {
+        gsap.to(".circleWrapper", {
+          rotation: `${330 - 60 * swipe?.activeIndex}`,
+        });
+      }
     }, anim);
 
     return () => ctx.revert();
