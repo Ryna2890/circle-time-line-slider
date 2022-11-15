@@ -104,6 +104,8 @@ export const TimeLine = () => {
               handlerMainSlideChange(swiper.activeIndex)
             }
             slidesPerGroup={1}
+            followFinger={false}
+            speed={300}
             loop={false}
             loopFillGroupWithBlank={false}
             cssMode={true}
@@ -137,6 +139,7 @@ export const TimeLine = () => {
           <Swiper
             className={"swiperFacts"}
             slidesPerView={isDesktop ? 3 : 2}
+            speed={300}
             spaceBetween={25}
             slidesPerGroup={1}
             loop={false}
